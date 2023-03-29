@@ -1,0 +1,40 @@
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Delicious Handrawn', cursive;
+  color: white;
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 40vw calc(60vw - 19px);
+  grid-template-rows: 5rem 1fr 5rem;
+  justify-items: center;
+}
+
+.grid-container {
+  border: 1px white solid;
+  display: grid;
+  width: clamp(300px, 60vw, 80vh);
+  height: clamp(300px, 60vw, 80vh);
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.grid-items {
+  border: 1px white solid;
+}
+
+.grid-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-row: 2;
+}
