@@ -10,16 +10,26 @@
 </head>
 <body>
   <main class="page">
-    <div class="grid-selector">
-      <input type="range" id="range-selector" min="2" max="32">
-      <label for="range-selector">Choose grid size</label>
+    <div class="controls">
+
+      <div class="grid-selector">
+        <p class="selector-p"></p>
+        <input type="range" id="range-selector" min="2" max="32">
+        <label for="range-selector">Choose grid size</label>
+        <button class="btn" id="reset">Reset</button>
+      </div>
+
+      <div class="color-mode">
+        <input type="text" id="custom-color">
+        <label for="custom-color">Choose custom color</label>
+        
+        <button id="random-color">Toggle rangom color</button>
+      </div>
+
     </div>
-    <div class="grid-container">
-      <div class="grid-items"></div>
-      <div class="grid-items"></div>
-      <div class="grid-items"></div>
-      <div class="grid-items"></div>
-    </div>
+
+    <div class="grid-container"></div>
+
   </main>
 </body>
 </html>

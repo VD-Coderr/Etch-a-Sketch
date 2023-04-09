@@ -30,7 +30,7 @@ html {
   grid-template-rows: repeat(2, 1fr);;
 }
 
-.grid-selector {
+.grid-selector, .color-mode {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -38,10 +38,21 @@ html {
 }
 
 .grid-items {
-  border: 1px rgba(255, 255, 255, 0.137) solid;
-
+  border: 1px rgba(255, 255, 255, 0.048) solid;
 }
 
-.grid-items:hover, .hover {
-  background-color: rgba(240, 248, 255, 0.541);
+.grid-items:hover{
+  border: 1px solid rgba(240, 248, 255, 0.555);
+}
+
+.hover {
+  background-color: rgba(240, 248, 255, 0.247);
+}
+
+.draw {
+  background-color: rgba(133, 184, 228, 0.76);
+}
+
+.selector-p{
+ margin: 0 auto 0 auto;
 }
