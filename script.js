@@ -96,6 +96,7 @@ function randomRGB() {
 
 function draw() {
   const gridItems = document.querySelectorAll('.grid-items');
+  
   gridItems.forEach((item) => {
     item.addEventListener('mousemove', () => {
       if (mouseDown) {

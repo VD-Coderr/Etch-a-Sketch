@@ -13,32 +13,103 @@ html {
 }
 
 .page {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 40vw calc(60vw - 19px);
-  grid-template-rows: 5rem 1fr 5rem;
   justify-items: center;
+  grid-template-areas: 'header header header'
+                       'controls container container'
+                       'footer footer footer';
+  gap: 1rem;
 }
 
-.grid-container {
-  border: 1px white solid;
-  width: clamp(300px, 60vw, 80vh);
-  height: clamp(300px, 60vw, 80vh);
-  grid-column: 2;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);;
+header {
+  grid-area: header;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.controls {
+  grid-area: controls;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  justify-self: end;
+}
+
+footer {
+  grid-area: footer;
+  align-self: center;
+}
+
+button {
+  background-color: rgba(240, 248, 255, 0.555);
+  border: none;
+  border-radius: 15px;
+  height: 2rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0F2027;
+}
+
+#range-selector {
+  -webkit-appearance: none;
+  background-color: rgba(240, 248, 255, 0.555);
+  height: 0.3rem;
+  border-radius: 15px;  
+  margin: 0.5rem 0;
+  width: 100%;
+}
+#range-selector::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  height: 1rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: ew-resize;
+}
+
+#custom-color {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#custom-color::-webkit-color-swatch {
+  border-radius: 15px;
+  border: none;
+}
+#custom-color::-moz-color-swatch {
+  border-radius: 15px;
+  border: none;
 }
 
 .grid-selector, .color-mode {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  grid-row: 2;
+  align-items: center;
 }
 
+.grid-container {
+  border: 1px white solid;
+  width: 700px;
+  aspect-ratio: 1;
+  grid-area: container;
+  display: grid;
+}
+
+
 .grid-items {
-  border: 1px rgba(255, 255, 255, 0.048) solid;
+  border: 1px solid rgba(255, 255, 255, 0.02) ;
 }
 
 .grid-items:hover{
@@ -47,10 +118,6 @@ html {
 
 .hover {
   background-color: rgba(240, 248, 255, 0.247);
-}
-
-.draw {
-  background-color: rgba(133, 184, 228, 0.76);
 }
 
 .selector-p{
