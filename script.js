@@ -1,15 +1,21 @@
 // --------- UI
 const gridContainer = document.querySelector('.grid-container');
 const rangeSelector = document.querySelector('#range-selector');
-const resetBtn = document.querySelector('#reset');
+const clearBtn = document.querySelector('#clear');
 const customColor = document.querySelector('#custom-color');
 const randomColorBtn = document.querySelector('#random-color');
 
 let R = 0; let G = 0; let B = 0;
-let randomToggle;
+let randomToggle = false;
 
 randomColorBtn.addEventListener('click', () => {
-  randomToggle ? randomToggle = false : randomToggle = true;
+  if (randomToggle) {
+    randomToggle = false
+    randomColorBtn.style.cssText = 'background-color: default; border: none';
+  } else {
+    randomToggle = true
+    randomColorBtn.style.cssText = 'background-color: rgba(161, 186, 207, 0.555); border: 1px solid white';
+  }
 })
 
 let mouseDown = false;
@@ -19,13 +25,13 @@ gridContainer.addEventListener('mousedown', () => {
   event.preventDefault(); // to prevent drag and drop of cells
 });
 
-gridContainer.addEventListener('mouseup', () => {
+gridContainer.addEventListener('click', () => {
   mouseDown = false;
 });
 
 
-let inputRange = rangeSelector.value; // updates by the user (event istener)
-let gridSize = inputRange ** 2; // total amount of grid elements
+let inputRange; // updates by the user (event istener)
+let gridSize; // total amount of grid elements
 
 // register input and return gridSize
 rangeSelector.addEventListener('mousemove', updateUI);
@@ -47,6 +53,9 @@ function buildGrid() {
   for (let i = 0; i < gridToRemove.length; i++) {
     gridToRemove[i].remove();
   };
+  //user input register
+  inputRange = rangeSelector.value;
+  gridSize = inputRange ** 2;
   //updates CSS grid-template to properly display (1:1)
   gridContainer.style.cssText = `grid-template: repeat(${inputRange}, 1fr) / repeat(${inputRange}, 1fr)`;
   // build grid of requested size
@@ -66,10 +75,7 @@ function updateUI() {
   selectorP.textContent = `${inputRange} x ${inputRange}`;
 }
 
-resetBtn.addEventListener('click', () => {
-  rangeSelector.value = 16;
-  inputRange = rangeSelector.value; // updates by the user (event istener)
-  gridSize = inputRange ** 2;
+clearBtn.addEventListener('click', () => {
   runGrid()
 })
 

@@ -53,7 +53,7 @@ button {
 }
 
 button:hover {
-  background-color: #0F2027;
+  background-color: rgba(193, 209, 223, 0.555);
 }
 
 #range-selector {
@@ -106,7 +106,6 @@ button:hover {
   grid-area: container;
   display: grid;
 }
-
 
 .grid-items {
   border: 1px solid rgba(255, 255, 255, 0.02) ;
