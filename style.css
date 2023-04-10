@@ -77,8 +77,8 @@ button:hover {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 100px;
-  height: 100px;
+  width: 6rem;
+  height: 6rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -121,4 +121,20 @@ button:hover {
 
 .selector-p{
  margin: 0 auto 0 auto;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+  .page {
+    grid-template-areas: 'header' 'controls' 'container' 'footer';
+  }
+  .controls {
+    justify-self: auto;
+  }
+  .grid-container{
+    width: 90vw;
+  }
+
 }

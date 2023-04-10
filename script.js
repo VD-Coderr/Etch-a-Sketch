@@ -25,7 +25,7 @@ gridContainer.addEventListener('mousedown', () => {
   event.preventDefault(); // to prevent drag and drop of cells
 });
 
-gridContainer.addEventListener('click', () => {
+gridContainer.addEventListener('mouseup', () => {
   mouseDown = false;
 });
 
@@ -127,5 +127,3 @@ function draw() {
     });
   });
 };
-
-
