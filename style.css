@@ -127,6 +127,9 @@ button:hover {
   html {
     font-size: 12px;
   }
+}
+
+@media (max-width: 900px) {
   .page {
     grid-template-areas: 'header' 'controls' 'container' 'footer';
   }
@@ -136,5 +139,4 @@ button:hover {
   .grid-container{
     width: 90vw;
   }
-
 }
